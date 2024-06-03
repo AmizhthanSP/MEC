@@ -21,8 +21,7 @@ login(token=HF_token, add_to_git_credential=True)  # Logging into Hugging Face H
 URL = "https://docs.google.com/spreadsheets/d/1Iqrzegq_yraPSUjORDfVt0NPR-pdhcnoxv34tz0hI9I/edit?usp=sharing"
 data = WebBaseLoader(URL)
 content = data.load()
- 
-# Split the content into chunks
+
 chunk_size = random.randint(4000, 6000)
 text_splitter = RecursiveCharacterTextSplitter(chunk_size=chunk_size, chunk_overlap=0)
 chunking = text_splitter.split_documents(content)
